@@ -27,7 +27,7 @@ repos:
       - id: pylint
         name: pylint
         entry: pylint app
-        args: ["--max-line-length=120", "--disable=E0401,W0511,R0914"
+        args: ["--max-line-length=120", "--disable=E0401,W0511,R0914,R0903"
         ]
         language: system
         always_run: true
