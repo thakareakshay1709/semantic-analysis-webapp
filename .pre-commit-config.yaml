@@ -1,0 +1,46 @@
+repos:
+  - repo: local
+    hooks:
+      # ============================================
+      # Code formatting
+      # ============================================
+      # black
+      - id: black
+        name: black
+        args: [--line-length=120]
+        entry: black app
+        language: system
+        always_run: true
+        pass_filenames: false
+      # isort
+      - id: isort
+        name: isort
+        args: [ "--profile", "black", --line-length=120 ]
+        entry: isort app
+        language: system
+        always_run: true
+        pass_filenames: false
+      # ==============================================
+      # Linting tools - EITHER flake8 or pylint
+      # ==============================================
+      # pylint
+      - id: pylint
+        name: pylint
+        entry: pylint app
+        args: ["--max-line-length=120", "--disable=E0401,W0511,R0914"
+        ]
+        language: system
+        always_run: true
+        pass_filenames: false
+      # ==============================================
+      # DocString Linting tools
+      # ==============================================
+      # pydocstyle
+      - id: pydocstyle
+        name: pydocstyle
+        entry: pydocstyle app
+        args: [--match='(?!test_).*\.py']
+        language: python
+        types: [python]
+        always_run: true
+        pass_filenames: true
