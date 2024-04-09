@@ -37,7 +37,7 @@ def invoke_dense_endpoint():
     """
     headers, files = prepare_local_payload()
     try:
-        url = "http://127.0.0.1:8000/densefeatureextraction/"
+        url = "http://127.0.0.1/densefeatureextraction/"
         # endpoint getting response from ResNet CNN model
         response_dense = requests.post(url, headers=headers, files=files)
         print(f"Received response from {url}")
@@ -52,7 +52,7 @@ def invoke_simple_endpoint():
     """
     headers, files = prepare_local_payload()
     try:
-        url = "http://127.0.0.1:8000/simplefeatureextraction/"
+        url = "http://127.0.0.1/simplefeatureextraction/"
         # endpoint getting response from VGG16 CNN model
         response_simple = requests.post(url, headers=headers, files=files)
         print(f"Received response from {url}")

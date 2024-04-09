@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOCAL_DOCKER_URL="http://127.0.0.1:8000/"
+LOCAL_DOCKER_URL="http://127.0.0.1/"
 
 if [ $(curl -X 'GET' "${LOCAL_DOCKER_URL}" -H 'accept: application/json' -o /dev/null -w '%{http_code}\n' -s) == "200" ]; then
   echo "Endpoint is working."
