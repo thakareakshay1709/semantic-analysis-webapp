@@ -14,7 +14,7 @@ webapp = FastAPI()
 
 
 @webapp.get("/")
-async def health_endpoint():
+async def health():
     """
     This get function is designed to validate whether the endpoint is live.
     :return: dict message
@@ -24,7 +24,7 @@ async def health_endpoint():
 
 
 @webapp.post("/densefeatureextraction/")
-async def get_semantic_similarity_resnet(input_files: List[UploadFile] = File(...), ref_file: UploadFile = File(...)):
+async def get_dense_features(input_files: List[UploadFile] = File(...), ref_file: UploadFile = File(...)):
     """
     This post method determines semantic similarity using ResNet (tensors).
     :param input_files: list of input files
@@ -49,7 +49,7 @@ async def get_semantic_similarity_resnet(input_files: List[UploadFile] = File(..
 
 
 @webapp.post("/simplefeatureextraction/")
-async def get_semantic_similarity_with_vgg(input_files: List[UploadFile] = File(...), ref_file: UploadFile = File(...)):
+async def extract_simple_features(input_files: List[UploadFile] = File(...), ref_file: UploadFile = File(...)):
     """
     This post method determines semantic similarity using VGG (torch).
     :param input_files: list of UploadFile type image input
