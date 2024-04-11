@@ -7,11 +7,11 @@ The goal is to detect which image file amongst the list of input images is seman
 
 ## Architecture Diagram
 
-- [] TODO: Insert lucid chart here
+![architecture](local_data/documentation/architecture.png)
 
 ## Directory Diagram
 
-- [] TODO: Explain what each file is intended for.
+![directory](local_data/documentation/directory.png)
 
 ## Tech Stack
 - [Python 3.9](https://www.python.org/downloads/release/python-390/) - To implement the features on this project 
