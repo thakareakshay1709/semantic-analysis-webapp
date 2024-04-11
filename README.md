@@ -49,6 +49,8 @@ The goal is to detect which image file amongst the list of input images is seman
       6. **independant_input_score** - float number representing confidence of pretrained image model determining input_category
       7. **ref_independant_score** - float number representing confidence of pretrained image model determining input_category
       8. **features length** - number of extracted embeddings
+      9. **embeddings** - dictionary of input image & ref image embeddings 
+         [**This part of output is commented out for readability**]
 9. Similarly you can follow the same steps for other endpoint
 
 ### Local (using Postman)
@@ -61,6 +63,7 @@ The goal is to detect which image file amongst the list of input images is seman
    2. **ref_filename** - name of reference file provided
    3. **cosine_similarity** - float number representing semantic similarity 0 (least similar) - 1 (most similar)
    4. **features length** - number of extracted embeddings
+   5. **embeddings** - dictionary of input image & ref image embeddings
 
 ### Command Line - Client Side (using Docker)
 1. Clone [this](https://github.com/thakareakshay1709/semantic-analysis-webapp.git) repository from github

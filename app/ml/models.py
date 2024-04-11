@@ -111,6 +111,9 @@ def get_semantic_similarity(input_content: Dict, ref_content: Dict) -> List:
         record["ref_filename"] = ref_name
         record["cosine_similarity"] = semantic_score
         record["features length"] = len(embeds[0])
+        record_input_embeds = embeds[0].tolist()
+        record_ref_embeds = ref_embeds[0].tolist()
+        record["embeddings"] = {"input_embeds": record_input_embeds, "ref_embeds": record_ref_embeds}
         response.append(record.copy())
     print("Preparing response")
     return response
@@ -156,6 +159,7 @@ def extract_semantic_features(input_content: Dict, ref_content: Dict):
         _record["input_category"] = input_cat
         _record["ref_category"] = ref_cat
         _record["features length"] = len(input_pred)
+        # _record["embeddings"] = {"input_embeds": input_pred.tolist(), "ref_embeds": ref_pred.tolist()}
         response.append(_record.copy())
         print(f"Record for {filename} and {ref_name} added to response.")
 
